@@ -63,7 +63,7 @@ executeDiagnostics(cohortDefinitionSet,
                    runTimeSeries = FALSE, 
                    runCohortOverlap = TRUE, 
                    runCohortCharacterization = TRUE,
-                   runTemporalCohortCharacterization = TRUE)
+                   runTemporalCohortCharacterization = FALSE)
 
 # drop cohort stats table
 CohortGenerator::dropCohortStatsTables(
