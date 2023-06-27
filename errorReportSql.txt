@@ -1,0 +1,103 @@
+DBMS:
+postgresql
+
+Error:
+org.postgresql.util.PSQLException: ERROR: terminating connection due to administrator command
+  Where: parallel worker
+
+SQL:
+CREATE TEMP TABLE concept_counts
+AS
+SELECT
+concept_id,
+	concept_count,
+	concept_subjects
+FROM
+(
+	SELECT condition_concept_id AS concept_id,
+		COUNT(*) AS concept_count,
+		COUNT(DISTINCT person_id) AS concept_subjects
+	FROM public.condition_occurrence
+	GROUP BY condition_concept_id
+	UNION ALL
+	SELECT condition_source_concept_id AS concept_id,
+		COUNT(*) AS concept_count,
+		COUNT(DISTINCT person_id) AS concept_subjects
+	FROM public.condition_occurrence
+	GROUP BY condition_source_concept_id
+	UNION ALL
+	SELECT drug_concept_id AS concept_id,
+		COUNT(*) AS concept_count,
+		COUNT(DISTINCT person_id) AS concept_subjects
+	FROM public.drug_exposure
+	GROUP BY drug_concept_id
+	UNION ALL
+	SELECT drug_source_concept_id AS concept_id,
+		COUNT(*) AS concept_count,
+		COUNT(DISTINCT person_id) AS concept_subjects
+	FROM public.drug_exposure
+	GROUP BY drug_source_concept_id
+	UNION ALL
+	SELECT procedure_concept_id AS concept_id,
+		COUNT(*) AS concept_count,
+		COUNT(DISTINCT person_id) AS concept_subjects
+	FROM public.procedure_occurrence
+	GROUP BY procedure_concept_id
+	UNION ALL
+	SELECT procedure_source_concept_id AS concept_id,
+		COUNT(*) AS concept_count,
+		COUNT(DISTINCT person_id) AS concept_subjects
+	FROM public.procedure_occurrence
+	GROUP BY procedure_source_concept_id
+	UNION ALL
+	SELECT measurement_concept_id AS concept_id,
+		COUNT(*) AS concept_count,
+		COUNT(DISTINCT person_id) AS concept_subjects
+	FROM public.measurement
+	GROUP BY measurement_concept_id
+	UNION ALL
+	SELECT measurement_source_concept_id AS concept_id,
+		COUNT(*) AS concept_count,
+		COUNT(DISTINCT person_id) AS concept_subjects
+	FROM public.measurement
+	GROUP BY measurement_source_concept_id
+	UNION ALL
+	SELECT observation_concept_id AS concept_id,
+		COUNT(*) AS concept_count,
+		COUNT(DISTINCT person_id) AS concept_subjects
+	FROM public.observation
+	GROUP BY observation_concept_id
+	UNION ALL
+	SELECT observation_source_concept_id AS concept_id,
+		COUNT(*) AS concept_count,
+		COUNT(DISTINCT person_id) AS concept_subjects
+	FROM public.observation
+	GROUP BY observation_source_concept_id
+	) tmp
+
+R version:
+R version 4.1.2 (2021-11-01)
+
+Platform:
+x86_64-pc-linux-gnu
+
+Attached base packages:
+- stats
+- graphics
+- grDevices
+- datasets
+- utils
+- methods
+- base
+
+Other attached packages:
+- CohortGenerator (0.3.0)
+- CohortDiagnostics (2.2.4)
+- FeatureExtraction (3.2.0)
+- Andromeda (0.6.0)
+- dplyr (1.0.9)
+- DatabaseConnector (5.0.2)
+- tibble (3.1.8)
+- stringr (1.4.0)
+- here (1.0.1)
+- CirceR (1.1.1)
