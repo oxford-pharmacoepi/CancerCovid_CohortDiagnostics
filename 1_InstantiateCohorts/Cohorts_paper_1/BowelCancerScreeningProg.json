@@ -1,17 +1,40 @@
 {
   "ConceptSets": [
     {
-      "id": 1,
-      "name": "Prostate Specific Antigen - Measurement",
+      "id": 0,
+      "name": "[OPTIMA] Bowel cancer screening programme",
       "expression": {
         "items": [
           {
             "concept": {
               "CONCEPT_CLASS_ID": "Procedure",
-              "CONCEPT_CODE": "63476009",
-              "CONCEPT_ID": 4272032,
-              "CONCEPT_NAME": "Prostate specific antigen measurement",
-              "DOMAIN_ID": "Measurement",
+              "CONCEPT_CODE": "286901000000107",
+              "CONCEPT_ID": 44791543,
+              "CONCEPT_NAME": "Bowel cancer screening programme",
+              "DOMAIN_ID": "Procedure",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "name": "Bowel cancer screening - observations",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Observable Entity",
+              "CONCEPT_CODE": "368481000000103",
+              "CONCEPT_ID": 44792842,
+              "CONCEPT_NAME": "Bowel cancer screening programme: faecal occult blood result",
+              "DOMAIN_ID": "Observation",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
               "STANDARD_CONCEPT": "S",
@@ -25,31 +48,16 @@
     },
     {
       "id": 2,
-      "name": "Prostate Specific Antigen - Observation",
+      "name": "Bowel cancer screening - conditions",
       "expression": {
         "items": [
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "Procedure",
-              "CONCEPT_CODE": "395155002",
-              "CONCEPT_ID": 4215705,
-              "CONCEPT_NAME": "Prostate-specific antigen monitoring",
-              "DOMAIN_ID": "Observation",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "VOCABULARY_ID": "SNOMED"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_CLASS_ID": "Observable Entity",
-              "CONCEPT_CODE": "1030791000000100",
-              "CONCEPT_ID": 37398806,
-              "CONCEPT_NAME": "Prostate specific antigen level",
-              "DOMAIN_ID": "Observation",
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "375241000000109",
+              "CONCEPT_ID": 44812675,
+              "CONCEPT_NAME": "Bowel cancer screening programme faecal occult blood test abnormal",
+              "DOMAIN_ID": "Condition",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
               "STANDARD_CONCEPT": "S",
@@ -65,12 +73,17 @@
   "PrimaryCriteria": {
     "CriteriaList": [
       {
-        "Measurement": {
-          "CodesetId": 1
+        "ProcedureOccurrence": {
+          "CodesetId": 0
         }
       },
       {
         "Observation": {
+          "CodesetId": 1
+        }
+      },
+      {
+        "ConditionOccurrence": {
           "CodesetId": 2
         }
       }

@@ -1,10 +1,10 @@
 # Get cohort details -----
-cohortJsonFiles <- list.files(here("1_InstantiateCohorts", "Cohorts"))
+cohortJsonFiles <- list.files(here("1_InstantiateCohorts", "Cohorts_paper_1"))
 cohortJsonFiles <- cohortJsonFiles[str_detect(cohortJsonFiles,".json")]
 
 cohortDefinitionSet <- list()
 for(i in 1:length(cohortJsonFiles)){
-working.json<-here("1_InstantiateCohorts", "Cohorts",
+working.json<-here("1_InstantiateCohorts", "Cohorts_paper_1",
                       cohortJsonFiles[i])
 cohortJson <- readChar(working.json, file.info(working.json)$size)
 cohortExpression <- cohortExpressionFromJson(cohortJson) # generates the sql
@@ -61,7 +61,7 @@ executeDiagnostics(cohortDefinitionSet,
                    runBreakdownIndexEvents = TRUE, 
                    runIncidenceRate = FALSE, 
                    runTimeSeries = FALSE, 
-                   runCohortOverlap = TRUE, 
+                   runCohortOverlap = FALSE, 
                    runCohortCharacterization = TRUE,
                    runTemporalCohortCharacterization = FALSE)
 
