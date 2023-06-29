@@ -15,3 +15,19 @@ This code is designed to run cohort diagnostics on the following outcome cohorts
 
 ## Changing/ adding cohort definitions
 Cohort definitions are in the folder 1_InstantiateCohorts\Cohorts. Whatever cohorts are present in this folder will be run, with the file name used as the name for the cohort.
+
+These analyses are featured in the following paper:
+
+Barclay, N.L., Pineda Moncusi, M., Jödicke, A. M., Prieto-Alhambra, D., Raventós, B., Newby, D., Delmestri, A., Man, W-Y., Chen, X., & Català, M. (in preparation). Changes in Incidence of Breast, Colorectal, Lung and Prostate Cancer, and Screening and Diagnostic Tests, Before, During and After the UK National COVID-19 Lockdown: A Retrospective Cohort Study Using UK Primary Care Health Records
+
+
+# Associated repositories and documents
+The paper (Barclay et al., in prep) contains analyses from other github repositories which can be found here:
+
+https://github.com/oxford-pharmacoepi/CancerCovid_CohortDiagnostics
+
+https://github.com/oxford-pharmacoepi/CancerCovid_Characterisations
+
+https://github.com/oxford-pharmacoepi/CancerCovid_IncidencePrevalence
+
+In addition, a shiny app through which to view additional cohort diagnostics can be found here: https://dpa-pde-oxford.shinyapps.io/CancerCovid_CohortDiagnosticsShiny_paper1/
