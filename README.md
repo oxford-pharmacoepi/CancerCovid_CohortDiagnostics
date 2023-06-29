@@ -2,11 +2,9 @@
 
 This code is designed to run cohort diagnostics on the following outcome cohorts for the Cancer Covid study:
 
-- Use of endocrine treatments in breast and prostate cancer (Aromatase Inhibitors, Tamoxifen, Androgen Deprivation Therapy with GnRH, GnRH as monotherapy for prostate cancer; LHRH antagonists);
-- Endocrine treatment-related outcomes (osteoporosis, osteopenia, bone fracture, prescriptions of bisphosphonates and denosumab);
-- Screening tests relevant to all four cancers (mammograms, biopsy of breast, bowel cancer screening programmes, sigmoidoscopy, colonoscopy, bronchoscopy, prostate specific antigen tests).
+- Breast, Colorectal, Lung and Prostate Cancer
+- Screening tests relevant to all four cancers (Biopsy Of Breast, Breast Cancer Referrals, Excision Of Breast, Mammograms, Seen Breast Clinic, Seen Breast Surgeon, Bowel Cancer Screening Prog, Colonoscopy, Quantitative Faecal Immunochemical Tests, Colorectal Cancer Referrals, Sigmoidoscopy, Bronchoscopy, Diagnostic Procedures Of Chest, Lung Cancer Referrals, Biopsy Of Prostate, Prostate Specific Antigen Test).
 
-Note that this code does not run cohort diagnostics on breast, colorectal, lung and prostate cancer cohorts as these cohorts have previously been validated in another cancer study.
 
 ## To Run
 1. Download this entire repository (you can download as a zip folder using Code -> Download ZIP, or you can use GitHub Desktop).
